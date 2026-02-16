@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="60">
+    <style>
+        image {
+        transition: filter 0.5s ease;
+        }
+        image:hover {
+        filter: brightness(1.15);
+        }
+    </style>
+
+    <image href="https://i.imgur.com/L8Vw9QX.png" width="30"/>
+</svg>

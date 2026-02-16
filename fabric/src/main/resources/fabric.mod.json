@@ -8,7 +8,8 @@
     "DontNag"
   ],
   "contact": {
-    "sources": "https://github.com/LMokahel/No-More-Overlays"
+    "sources": "https://github.com/LMokahel/No-More-Overlays",
+    "issues": "https://github.com/LMokahel/No-More-Overlays/issues"
   },
   "license": "CC0-1.0",
   "icon": "icon.png",

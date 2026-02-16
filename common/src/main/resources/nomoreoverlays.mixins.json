@@ -1,0 +1,16 @@
+{
+  "required": true,
+  "package": "com.dontnag.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "minVersion": "0.8",
+  "client": [
+    "ClientPacketListenerMixin",
+    "GameRendererMixin",
+    "GuiMixin",
+    "LightTextureClient",
+    "ScreenEffectRendererMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

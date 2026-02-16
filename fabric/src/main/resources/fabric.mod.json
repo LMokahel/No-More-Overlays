@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "nomoreoverlays",
+  "version": "${version}",
+  "name": "No More Overlays",
+  "description": "Allows the user to toggle all of minecraft's screen effects.",
+  "authors": [
+    "DontNag"
+  ],
+  "contact": {
+    "sources": "https://github.com/LMokahel/No-More-Overlays"
+  },
+  "license": "CC0-1.0",
+  "icon": "icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "modmenu": [
+      "com.dontnag.fabric.client.ModMenuCompat"
+    ],
+    "client": [
+      "com.dontnag.fabric.client.NoMoreOverlaysFabricClient"
+    ]
+  },
+  "mixins": [
+    "nomoreoverlays.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.12.0",
+    "minecraft": "~1.20.1",
+    "java": ">=17",
+    "architectury": ">=9.0.8",
+    "fabric-api": "*",
+    "cloth-config": ">=11.0.9",
+    "modmenu": ">=7.2.2"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}

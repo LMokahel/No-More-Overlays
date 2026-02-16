@@ -1,0 +1,16 @@
+package com.dontnag.fabric.client;
+
+import com.dontnag.NoMoreOverlaysConfig;
+
+import me.shedaniel.autoconfig.AutoConfig;
+import me.shedaniel.autoconfig.serializer.Toml4jConfigSerializer;
+
+import net.fabricmc.api.ClientModInitializer;
+
+public final class NoMoreOverlaysFabricClient implements ClientModInitializer {
+
+    @Override
+    public void onInitializeClient() {
+        AutoConfig.register(NoMoreOverlaysConfig.class, Toml4jConfigSerializer::new);
+    }
+}

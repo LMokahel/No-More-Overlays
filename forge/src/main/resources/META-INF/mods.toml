@@ -1,0 +1,43 @@
+modLoader = "javafml"
+loaderVersion = "[47,)"
+#issueTrackerURL = ""
+license = "All Rights Reserved"
+
+[[mods]]
+modId = "nomoreoverlays"
+version = "${version}"
+displayName = "No More Overlays"
+authors = "DontNag"
+description = '''
+Allows the user to toggle all of minecraft's screen effects.
+'''
+#logoFile = ""
+displayTest = "IGNORE_ALL_VERSION"
+
+[[dependencies.nomoreoverlays]]
+modId = "forge"
+mandatory = true
+versionRange = "[47,)"
+ordering = "NONE"
+side = "CLIENT"
+
+[[dependencies.nomoreoverlays]]
+modId = "minecraft"
+mandatory = true
+versionRange = "[1.20.1,1.20.2)"
+ordering = "NONE"
+side = "CLIENT"
+
+[[dependencies.nomoreoverlays]]
+modId = "architectury"
+mandatory = true
+versionRange = "[9.0.8,)"
+ordering = "AFTER"
+side = "CLIENT"
+
+[[dependencies.nomoreoverlays]]
+modId = "cloth_config"
+mandatory = true
+versionRange = "[11.0.99,)"
+ordering = "AFTER"
+side = "CLIENT"

@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="220" height="60">
+<svg xmlns="http://www.w3.org/2000/svg" width="378" height="112">
     <style>
         image {
         transition: filter 0.5s ease;
@@ -8,5 +8,5 @@
         }
     </style>
 
-    <image href="https://i.imgur.com/L8Vw9QX.png"/>
+    <image href="https://i.imgur.com/L8Vw9QX.png" width="378" height="112"/>
 </svg>

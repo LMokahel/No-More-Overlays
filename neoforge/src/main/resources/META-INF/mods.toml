@@ -1,5 +1,5 @@
 modLoader = "javafml"
-loaderVersion = "[49,)"
+loaderVersion = "[2,)"
 issueTrackerURL = "https://github.com/LMokahel/No-More-Overlays/issues"
 license = "All Rights Reserved"
 
@@ -9,31 +9,35 @@ version = "${version}"
 displayName = "No More Overlays"
 authors = "DontNag"
 description = "Minecraft mod that allows the user to toggle all of Minecraft's screen effects."
+logoFile = "icon.png"
 
 [[dependencies.nomoreoverlays]]
-modId = "forge"
-mandatory = true
-versionRange = "[49,)"
+modId = "neoforge"
+type = "required"
+versionRange = "[20.4,)"
 ordering = "NONE"
-side = "CLIENT"
+side = "BOTH"
 
 [[dependencies.nomoreoverlays]]
 modId = "minecraft"
-mandatory = true
+type = "required"
 versionRange = "[1.20.4,)"
 ordering = "NONE"
-side = "CLIENT"
+side = "BOTH"
 
 [[dependencies.nomoreoverlays]]
 modId = "architectury"
-mandatory = true
-versionRange = "[11.0.7,)"
+type = "required"
+versionRange = "[11.1.17,)"
 ordering = "AFTER"
-side = "CLIENT"
+side = "BOTH"
 
 [[dependencies.nomoreoverlays]]
 modId = "cloth_config"
-mandatory = true
+type = "required"
 versionRange = "[13.0.112,)"
 ordering = "AFTER"
 side = "CLIENT"
+
+[[mixins]]
+config = "nomoreoverlays.mixins.json"

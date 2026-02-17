@@ -1,6 +1,6 @@
 package com.dontnag.mixin;
 
-import com.dontnag.NoMoreOverlaysConfig;
+import com.dontnag.NoMoreOverlays;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 
@@ -17,14 +17,14 @@ public class ScreenEffectRendererMixin {
 
     @Inject(method = "renderFire", at = @At("HEAD"), cancellable = true)
     private static void fireOverlay(Minecraft minecraft, PoseStack poseStack, CallbackInfo ci){
-        if(NoMoreOverlaysConfig.fire){
+        if(NoMoreOverlays.config.fire){
             ci.cancel();
         }
     }
 
     @Inject(method = "renderWater", at = @At("HEAD"), cancellable = true)
     private static void waterOverlay(Minecraft minecraft, PoseStack poseStack, CallbackInfo ci){
-        if(NoMoreOverlaysConfig.underwater){
+        if(NoMoreOverlays.config.underwater){
             ci.cancel();
         }
     }

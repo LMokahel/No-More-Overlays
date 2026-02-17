@@ -1,6 +1,6 @@
 package com.dontnag.mixin;
 
-import com.dontnag.NoMoreOverlaysConfig;
+import com.dontnag.NoMoreOverlays;
 
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.multiplayer.ClientPacketListener;
@@ -17,14 +17,14 @@ public class ClientPacketListenerMixin {
 
     @Redirect(method = "handleEntityEvent", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/renderer/GameRenderer;displayItemActivation(Lnet/minecraft/world/item/ItemStack;)V"))
     private void totemOverlay(GameRenderer instance, ItemStack arg){
-        if(!NoMoreOverlaysConfig.totem){
+        if(!NoMoreOverlays.config.totem){
             instance.displayItemActivation(arg);
         }
     }
 
     @Redirect(method = "handleGameEvent", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/multiplayer/ClientLevel;addParticle(Lnet/minecraft/core/particles/ParticleOptions;DDDDDD)V"))
     private void elderGuardianOverlay(ClientLevel instance, ParticleOptions arg, double d, double e, double f, double g, double h, double i){
-        if(!NoMoreOverlaysConfig.elder_guardian){
+        if(!NoMoreOverlays.config.elder_guardian){
             instance.addParticle(arg, d, e, f, g, h, i);
         }
     }

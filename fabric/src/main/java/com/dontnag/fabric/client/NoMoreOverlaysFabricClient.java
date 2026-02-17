@@ -1,5 +1,6 @@
 package com.dontnag.fabric.client;
 
+import com.dontnag.NoMoreOverlays;
 import com.dontnag.NoMoreOverlaysConfig;
 
 import me.shedaniel.autoconfig.AutoConfig;
@@ -12,5 +13,6 @@ public final class NoMoreOverlaysFabricClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
         AutoConfig.register(NoMoreOverlaysConfig.class, Toml4jConfigSerializer::new);
+        NoMoreOverlays.config = AutoConfig.getConfigHolder(NoMoreOverlaysConfig.class).getConfig();
     }
 }

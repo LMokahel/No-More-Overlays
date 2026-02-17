@@ -1,26 +1,25 @@
-package com.dontnag.forge;
-
-import com.dontnag.NoMoreOverlaysConfig;
-import me.shedaniel.autoconfig.AutoConfig;
-import me.shedaniel.autoconfig.serializer.Toml4jConfigSerializer;
-
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.client.ConfigScreenHandler;
-import net.minecraftforge.fml.DistExecutor;
-import net.minecraftforge.fml.ModLoadingContext;
-import net.minecraftforge.fml.common.Mod;
+package com.dontnag.neoforge;
 
 import com.dontnag.NoMoreOverlays;
+import com.dontnag.NoMoreOverlaysConfig;
+
+import me.shedaniel.autoconfig.AutoConfig;
+
+import me.shedaniel.autoconfig.serializer.Toml4jConfigSerializer;
+import net.neoforged.fml.ModLoadingContext;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.loading.FMLEnvironment;
+import net.neoforged.neoforge.client.ConfigScreenHandler;
 
 @Mod(NoMoreOverlays.MOD_ID)
-public final class NoMoreOverlaysForge {
+public final class NoMoreOverlaysNeoForge {
 
-    public NoMoreOverlaysForge() {
+    public NoMoreOverlaysNeoForge() {
         AutoConfig.register(NoMoreOverlaysConfig.class, Toml4jConfigSerializer::new);
         NoMoreOverlays.config = AutoConfig.getConfigHolder(NoMoreOverlaysConfig.class).getConfig();
-        DistExecutor.runWhenOn(Dist.CLIENT, () -> () -> {
-            NoMoreOverlaysForge.registerScreen();
-        });
+        if(FMLEnvironment.dist.isClient()){
+            NoMoreOverlaysNeoForge.registerScreen();
+        }
     }
 
     public static void registerScreen(){

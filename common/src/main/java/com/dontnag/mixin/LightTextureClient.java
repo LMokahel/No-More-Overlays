@@ -1,6 +1,6 @@
 package com.dontnag.mixin;
 
-import com.dontnag.NoMoreOverlaysConfig;
+import com.dontnag.NoMoreOverlays;
 
 import net.minecraft.client.renderer.LightTexture;
 
@@ -14,7 +14,7 @@ public class LightTextureClient {
 
     @Inject(method = "getDarknessGamma", at = @At("HEAD"), cancellable = true)
     private void darknessOverlay(float f, CallbackInfoReturnable<Float> cir){
-        if(NoMoreOverlaysConfig.darkness){
+        if(NoMoreOverlays.config.darkness){
             cir.setReturnValue(0f);
         }
     }

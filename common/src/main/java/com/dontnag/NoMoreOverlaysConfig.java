@@ -8,35 +8,35 @@ import me.shedaniel.autoconfig.annotation.ConfigEntry;
 public class NoMoreOverlaysConfig implements ConfigData {
 
     @ConfigEntry.Gui.Tooltip
-    public static boolean pumpkin;
+    public boolean pumpkin;
 
     @ConfigEntry.Gui.Tooltip
-    public static boolean freezing;
+    public boolean freezing;
 
     @ConfigEntry.Gui.Tooltip
-    public static boolean totem;
+    public boolean totem;
 
     @ConfigEntry.Gui.Tooltip
-    public static boolean elder_guardian;
+    public boolean elder_guardian;
 
     @ConfigEntry.Gui.Tooltip
-    public static boolean nausea;
+    public boolean nausea;
 
     @ConfigEntry.Gui.Tooltip
-    public static boolean fire;
+    public boolean fire;
 
     @ConfigEntry.Gui.Tooltip
-    public static boolean spyglass;
+    public boolean spyglass;
 
     @ConfigEntry.Gui.Tooltip
-    public static boolean portal;
+    public boolean portal;
 
     @ConfigEntry.Gui.Tooltip
-    public static boolean underwater;
+    public boolean underwater;
 
     @ConfigEntry.Gui.Tooltip
-    public static boolean darkness;
+    public boolean darkness;
 
     @ConfigEntry.Gui.Tooltip
-    public static boolean vignette;
+    public boolean vignette;
 }

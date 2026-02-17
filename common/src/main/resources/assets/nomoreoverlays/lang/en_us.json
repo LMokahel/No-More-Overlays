@@ -8,7 +8,6 @@
   "text.autoconfig.nomoreoverlays.option.spyglass": "Hide Spyglass",
   "text.autoconfig.nomoreoverlays.option.portal": "Hide Portal",
   "text.autoconfig.nomoreoverlays.option.underwater": "Hide Water",
-  "text.autoconfig.nomoreoverlays.option.suffocation": "Hide Suffocation",
   "text.autoconfig.nomoreoverlays.option.darkness": "Hide Darkness",
   "text.autoconfig.nomoreoverlays.option.vignette": "Hide Vignette",
 
@@ -21,7 +20,6 @@
   "text.autoconfig.nomoreoverlays.option.spyglass.@Tooltip": "Hides the spyglass overlay when you zoom in with a spyglass.",
   "text.autoconfig.nomoreoverlays.option.portal.@Tooltip": "Hides the portal overlay when you step into a nether portal.",
   "text.autoconfig.nomoreoverlays.option.underwater.@Tooltip": "Hides the vignette overlay when underwater. Best used in conjunction with the hide vignette option.",
-  "text.autoconfig.nomoreoverlays.option.suffocation.@Tooltip": "Hides the block texture overlay on screen when suffocating inside of a block.",
   "text.autoconfig.nomoreoverlays.option.darkness.@Tooltip": "Hides the pulsing vignette overlay when you have the darkness effect.",
   "text.autoconfig.nomoreoverlays.option.vignette.@Tooltip": "Hides the vignette overlay when in a dark environment.",
 

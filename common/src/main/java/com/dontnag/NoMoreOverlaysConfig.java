@@ -35,9 +35,6 @@ public class NoMoreOverlaysConfig implements ConfigData {
     public static boolean underwater;
 
     @ConfigEntry.Gui.Tooltip
-    public static boolean suffocation;
-
-    @ConfigEntry.Gui.Tooltip
     public static boolean darkness;
 
     @ConfigEntry.Gui.Tooltip

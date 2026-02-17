@@ -6,7 +6,6 @@ import com.mojang.blaze3d.vertex.PoseStack;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.ScreenEffectRenderer;
-import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -26,13 +25,6 @@ public class ScreenEffectRendererMixin {
     @Inject(method = "renderWater", at = @At("HEAD"), cancellable = true)
     private static void waterOverlay(Minecraft minecraft, PoseStack poseStack, CallbackInfo ci){
         if(NoMoreOverlaysConfig.underwater){
-            ci.cancel();
-        }
-    }
-
-    @Inject(method = "renderTex", at = @At("HEAD"), cancellable = true)
-    private static void suffocationOverlay(TextureAtlasSprite textureAtlasSprite, PoseStack poseStack, CallbackInfo ci){
-        if(NoMoreOverlaysConfig.suffocation){
             ci.cancel();
         }
     }

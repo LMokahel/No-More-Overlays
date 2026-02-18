@@ -25,13 +25,6 @@ ordering = "NONE"
 side = "CLIENT"
 
 [[dependencies.nomoreoverlays]]
-modId = "architectury"
-mandatory = true
-versionRange = "[11.0.7,)"
-ordering = "AFTER"
-side = "CLIENT"
-
-[[dependencies.nomoreoverlays]]
 modId = "cloth_config"
 mandatory = true
 versionRange = "[13.0.112,)"

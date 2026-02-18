@@ -11,6 +11,7 @@ import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
 
 import com.dontnag.NoMoreOverlays;
+import net.minecraftforge.fml.loading.FMLEnvironment;
 
 @Mod(NoMoreOverlays.MOD_ID)
 public final class NoMoreOverlaysForge {
@@ -18,9 +19,9 @@ public final class NoMoreOverlaysForge {
     public NoMoreOverlaysForge() {
         AutoConfig.register(NoMoreOverlaysConfig.class, Toml4jConfigSerializer::new);
         NoMoreOverlays.config = AutoConfig.getConfigHolder(NoMoreOverlaysConfig.class).getConfig();
-        DistExecutor.runWhenOn(Dist.CLIENT, () -> () -> {
+        if(FMLEnvironment.dist.isClient()){
             NoMoreOverlaysForge.registerScreen();
-        });
+        }
     }
 
     public static void registerScreen(){

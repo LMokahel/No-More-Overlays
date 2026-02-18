@@ -1,5 +1,5 @@
 modLoader = "javafml"
-loaderVersion = "[2,)"
+loaderVersion = "[0,)"
 issueTrackerURL = "https://github.com/LMokahel/No-More-Overlays/issues"
 license = "All Rights Reserved"
 
@@ -13,22 +13,22 @@ logoFile = "icon.png"
 
 [[dependencies.nomoreoverlays]]
 modId = "neoforge"
-type = "required"
-versionRange = "[20.4,)"
+mandatory = true
+versionRange = "[20.2.3-beta,)"
 ordering = "NONE"
 side = "CLIENT"
 
 [[dependencies.nomoreoverlays]]
 modId = "minecraft"
-type = "required"
-versionRange = "[1.20.4,)"
+mandatory = true
+versionRange = "[1.20.2,1.20.4]"
 ordering = "NONE"
 side = "CLIENT"
 
 [[dependencies.nomoreoverlays]]
 modId = "cloth_config"
-type = "required"
-versionRange = "[13.0.112,)"
+mandatory = true
+versionRange = "[12.0.110,)"
 ordering = "AFTER"
 side = "CLIENT"
 

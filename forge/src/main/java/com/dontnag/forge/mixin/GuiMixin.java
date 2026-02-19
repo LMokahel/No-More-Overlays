@@ -1,11 +1,11 @@
-package com.dontnag.mixin;
+package com.dontnag.forge.mixin;
 
-import com.dontnag.NoMoreOverlays;
+import com.dontnag.forge.NoMoreOverlaysForge;
 
 import net.minecraft.client.gui.Gui;
 import net.minecraft.client.gui.GuiGraphics;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.client.player.LocalPlayer;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 
@@ -20,7 +20,7 @@ public class GuiMixin {
 
     @Redirect(method = "renderCameraOverlays", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/item/ItemStack;is(Lnet/minecraft/world/item/Item;)Z"))
     private boolean pumpkinOverlay(ItemStack stack, Item item){
-        if(NoMoreOverlays.config.pumpkin){
+        if(NoMoreOverlaysForge.config.pumpkin){
             return false;
         }
         return stack.is(item);
@@ -28,7 +28,7 @@ public class GuiMixin {
 
     @Redirect(method = "renderCameraOverlays", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/player/LocalPlayer;getTicksFrozen()I"))
     private int freezingOverlay(LocalPlayer player){
-        if(NoMoreOverlays.config.freezing){
+        if(NoMoreOverlaysForge.config.freezing){
             return 0;
         }
         return player.getTicksFrozen();
@@ -36,21 +36,21 @@ public class GuiMixin {
 
     @Inject(method = "renderSpyglassOverlay", at = @At("HEAD"), cancellable = true)
     private void spyglassOverlay(GuiGraphics arg, float g, CallbackInfo ci){
-        if(NoMoreOverlays.config.spyglass){
+        if(NoMoreOverlaysForge.config.spyglass){
             ci.cancel();
         }
     }
 
     @Inject(method = "renderPortalOverlay", at = @At("HEAD"), cancellable = true)
     private void portalOverlay(GuiGraphics arg, float f, CallbackInfo ci){
-        if(NoMoreOverlays.config.portal){
+        if(NoMoreOverlaysForge.config.portal){
             ci.cancel();
         }
     }
 
     @Inject(method = "renderVignette", at = @At("HEAD"), cancellable = true)
     private void vignetteOverlay(GuiGraphics guiGraphics, Entity entity, CallbackInfo ci){
-        if(NoMoreOverlays.config.vignette){
+        if(NoMoreOverlaysForge.config.vignette){
             ci.cancel();
         }
     }

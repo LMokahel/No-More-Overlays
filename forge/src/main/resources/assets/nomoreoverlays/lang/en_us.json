@@ -1,0 +1,27 @@
+{
+  "text.autoconfig.nomoreoverlays.option.pumpkin": "Hide Pumpkin",
+  "text.autoconfig.nomoreoverlays.option.freezing": "Hide Freezing",
+  "text.autoconfig.nomoreoverlays.option.totem": "Hide Totem",
+  "text.autoconfig.nomoreoverlays.option.elder_guardian": "Hide Elder Guardian",
+  "text.autoconfig.nomoreoverlays.option.nausea": "Hide Nausea",
+  "text.autoconfig.nomoreoverlays.option.fire": "Hide Fire",
+  "text.autoconfig.nomoreoverlays.option.spyglass": "Hide Spyglass",
+  "text.autoconfig.nomoreoverlays.option.portal": "Hide Portal",
+  "text.autoconfig.nomoreoverlays.option.underwater": "Hide Water",
+  "text.autoconfig.nomoreoverlays.option.darkness": "Hide Darkness",
+  "text.autoconfig.nomoreoverlays.option.vignette": "Hide Vignette",
+
+  "text.autoconfig.nomoreoverlays.option.pumpkin.@Tooltip": "Hides the pumpkin overlay when you equip a carved pumpkin.",
+  "text.autoconfig.nomoreoverlays.option.freezing.@Tooltip": "Hides the freezing overlay when you start freezing after touching powder snow.",
+  "text.autoconfig.nomoreoverlays.option.totem.@Tooltip": "Hides the totem overlay when your totem is used",
+  "text.autoconfig.nomoreoverlays.option.elder_guardian.@Tooltip": "Hides the elder guardian overlay when you receive the mining fatigue effect from an elder guardian.",
+  "text.autoconfig.nomoreoverlays.option.nausea.@Tooltip": "Hides the nausea overlay when you have the nausea effect.",
+  "text.autoconfig.nomoreoverlays.option.fire.@Tooltip": "Hides the fire overlay when you're on fire.",
+  "text.autoconfig.nomoreoverlays.option.spyglass.@Tooltip": "Hides the spyglass overlay when you zoom in with a spyglass.",
+  "text.autoconfig.nomoreoverlays.option.portal.@Tooltip": "Hides the portal overlay when you step into a nether portal.",
+  "text.autoconfig.nomoreoverlays.option.underwater.@Tooltip": "Hides the vignette overlay when underwater. Best used in conjunction with the hide vignette option.",
+  "text.autoconfig.nomoreoverlays.option.darkness.@Tooltip": "Hides the pulsing vignette overlay when you have the darkness effect.",
+  "text.autoconfig.nomoreoverlays.option.vignette.@Tooltip": "Hides the vignette overlay when in a dark environment.",
+
+  "text.autoconfig.nomoreoverlays.title": "No More Overlays Config"
+}

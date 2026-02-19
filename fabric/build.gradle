@@ -1,5 +1,5 @@
 plugins {
-    id 'com.github.johnrengelman.shadow'
+    id 'com.gradleup.shadow'
 }
 
 repositories {
@@ -44,7 +44,7 @@ dependencies {
         transitive false
     }
 
-    common(project(path: ':common', configuration: 'namedElements')) { transitive false }
+    common(project(path: ':common', configuration: 'namedElements')) { transitive = false }
     shadowBundle project(path: ':common', configuration: 'transformProductionFabric')
 }
 
@@ -52,7 +52,14 @@ processResources {
     inputs.property 'version', project.version
 
     filesMatching('fabric.mod.json') {
-        expand version: project.version
+        expand(
+            version: inputs.properties.version,
+            cloth_version: cloth_config_version,
+            mod_menu_version: mod_menu_version,
+            minecraft_version: minecraft_version,
+            java_version: java_version,
+            mod_name: mod_name
+        )
     }
 }
 
@@ -62,5 +69,5 @@ shadowJar {
 }
 
 remapJar {
-    input.set shadowJar.archiveFile
+    inputFile.set shadowJar.archiveFile
 }

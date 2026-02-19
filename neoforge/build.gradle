@@ -1,5 +1,5 @@
 plugins {
-    id 'com.github.johnrengelman.shadow'
+    id 'com.gradleup.shadow'
 }
 
 architectury {
@@ -36,15 +36,21 @@ dependencies {
 
     modImplementation "me.shedaniel.cloth:cloth-config-neoforge:$rootProject.cloth_config_version"
 
-    common(project(path: ':common', configuration: 'namedElements')) { transitive false }
+    common(project(path: ':common', configuration: 'namedElements')) { transitive = false }
     shadowBundle project(path: ':common', configuration: 'transformProductionNeoForge')
 }
 
 processResources {
     inputs.property 'version', project.version
 
-    filesMatching('META-INF/mods.toml') {
-        expand version: project.version
+    filesMatching('META-INF/neoforge.mods.toml') {
+        expand(
+            version: inputs.properties.version,
+            cloth_version: cloth_config_version,
+            minecraft_version: minecraft_version,
+            neoforge_version: neoforge_version,
+            mod_name: mod_name
+        )
     }
 }
 
@@ -54,5 +60,5 @@ shadowJar {
 }
 
 remapJar {
-    input.set shadowJar.archiveFile
+    inputFile.set shadowJar.archiveFile
 }

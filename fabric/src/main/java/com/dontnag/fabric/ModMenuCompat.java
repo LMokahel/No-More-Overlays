@@ -1,8 +1,10 @@
-package com.dontnag.fabric.client;
+package com.dontnag.fabric;
 
 import com.dontnag.NoMoreOverlaysConfig;
+
 import com.terraformersmc.modmenu.api.ConfigScreenFactory;
 import com.terraformersmc.modmenu.api.ModMenuApi;
+
 import me.shedaniel.autoconfig.AutoConfig;
 
 public class ModMenuCompat implements ModMenuApi {

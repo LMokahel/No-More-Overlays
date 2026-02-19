@@ -1,34 +1,30 @@
 package com.dontnag.forge;
 
-import com.dontnag.NoMoreOverlaysConfig;
 import me.shedaniel.autoconfig.AutoConfig;
-import me.shedaniel.autoconfig.serializer.Toml4jConfigSerializer;
+import me.shedaniel.autoconfig.serializer.GsonConfigSerializer;
 
-import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.ConfigScreenHandler;
-import net.minecraftforge.fml.DistExecutor;
-import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
-
-import com.dontnag.NoMoreOverlays;
+import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.fml.loading.FMLEnvironment;
 
-@Mod(NoMoreOverlays.MOD_ID)
-public final class NoMoreOverlaysForge {
+@Mod(NoMoreOverlaysForge.MOD_ID)
+public class NoMoreOverlaysForge {
 
-    public NoMoreOverlaysForge() {
-        AutoConfig.register(NoMoreOverlaysConfig.class, Toml4jConfigSerializer::new);
-        NoMoreOverlays.config = AutoConfig.getConfigHolder(NoMoreOverlaysConfig.class).getConfig();
+    public static final String MOD_ID = "nomoreoverlays";
+    public static NoMoreOverlaysConfig config;
+
+    public NoMoreOverlaysForge(FMLJavaModLoadingContext context) {
+        AutoConfig.register(NoMoreOverlaysConfig.class, GsonConfigSerializer::new);
+        config = AutoConfig.getConfigHolder(NoMoreOverlaysConfig.class).getConfig();
         if(FMLEnvironment.dist.isClient()){
-            NoMoreOverlaysForge.registerScreen();
+            context.registerExtensionPoint(ConfigScreenHandler.ConfigScreenFactory.class, NoMoreOverlaysForge::getConfigScreen);
         }
     }
 
-    public static void registerScreen(){
-        ModLoadingContext.get().registerExtensionPoint(ConfigScreenHandler.ConfigScreenFactory.class, () ->
-                new ConfigScreenHandler.ConfigScreenFactory((client, parent) ->
-                        AutoConfig.getConfigScreen(NoMoreOverlaysConfig.class, parent).get()
-                )
+    public static ConfigScreenHandler.ConfigScreenFactory getConfigScreen(){
+        return new ConfigScreenHandler.ConfigScreenFactory(
+                (client, parent) -> AutoConfig.getConfigScreen(NoMoreOverlaysConfig.class, parent).get()
         );
     }
 }

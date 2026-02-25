@@ -14,7 +14,7 @@ allprojects {
 }
 
 subprojects {
-    if(project.name == "forge") return
+    if(project.name == 'forge') return
     apply plugin: 'dev.architectury.loom'
     apply plugin: 'architectury-plugin'
     apply plugin: 'maven-publish'

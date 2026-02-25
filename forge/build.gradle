@@ -18,9 +18,8 @@ java.toolchain.languageVersion = JavaLanguageVersion.of(21)
 println "Java: ${System.getProperty 'java.version'}, JVM: ${System.getProperty 'java.vm.version'} (${System.getProperty 'java.vendor'}), Arch: ${System.getProperty 'os.arch'}"
 minecraft {
     mappings channel: "official", version: "${minecraft_version}"
-    
-    reobf = false
 
+    reobf = false
 
     copyIdeResources = true
     runs {
@@ -77,6 +76,7 @@ tasks.named('processResources', ProcessResources).configure {
     filesMatching('META-INF/mods.toml') {
         expand(
                 minecraft_version: minecraft_version,
+                minecraft_version_cap: minecraft_version_cap,
                 forge_version: forge_version,
                 mod_version: mod_version,
                 mod_name: mod_name

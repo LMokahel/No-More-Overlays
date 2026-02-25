@@ -48,6 +48,7 @@ processResources {
             version: inputs.properties.version,
             cloth_version: cloth_config_version,
             minecraft_version: minecraft_version,
+            minecraft_version_cap: minecraft_version_cap,
             neoforge_version: neoforge_version,
             mod_name: mod_name
         )

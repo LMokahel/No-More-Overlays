@@ -22,7 +22,7 @@ side = "CLIENT"
 [[dependencies.nomoreoverlays]]
 modId = "minecraft"
 type = "required"
-versionRange = "[${minecraft_version},)"
+versionRange = "[${minecraft_version},${minecraft_version_cap}]"
 ordering = "NONE"
 side = "CLIENT"
 

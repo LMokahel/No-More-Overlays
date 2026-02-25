@@ -4,7 +4,6 @@ import com.dontnag.NoMoreOverlays;
 import com.dontnag.NoMoreOverlaysConfig;
 import me.shedaniel.autoconfig.AutoConfig;
 import me.shedaniel.autoconfig.serializer.Toml4jConfigSerializer;
-import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.ModLoadingContext;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.loading.FMLEnvironment;
@@ -15,7 +14,7 @@ public final class NoMoreOverlaysNeoForge {
 
     public static final String MOD_ID = "nomoreoverlays";
 
-    public NoMoreOverlaysNeoForge(ModContainer container) {
+    public NoMoreOverlaysNeoForge() {
         AutoConfig.register(NoMoreOverlaysConfig.class, Toml4jConfigSerializer::new);
         NoMoreOverlays.config = AutoConfig.getConfigHolder(NoMoreOverlaysConfig.class).getConfig();
         if(FMLEnvironment.dist.isClient()){

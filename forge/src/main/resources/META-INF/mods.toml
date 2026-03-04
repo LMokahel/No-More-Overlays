@@ -25,3 +25,13 @@ mandatory = true
 versionRange = "[${minecraft_version},${minecraft_version_cap}]"
 ordering = "NONE"
 side = "CLIENT"
+
+[[dependencies.nomoreoverlays]]
+modId = "cloth_config"
+mandatory = true
+versionRange = "[${cloth_config_version},)"
+ordering = "NONE"
+side = "CLIENT"
+
+[[mixins]]
+config = "nomoreoverlays.mixins.json"

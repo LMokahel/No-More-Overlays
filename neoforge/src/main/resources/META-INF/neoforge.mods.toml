@@ -2,7 +2,6 @@ modLoader = "javafml"
 loaderVersion = "[0,)"
 issueTrackerURL = "https://github.com/LMokahel/No-More-Overlays/issues"
 license = "All Rights Reserved"
-clientSideOnly = true
 
 [[mods]]
 modId = "nomoreoverlays"

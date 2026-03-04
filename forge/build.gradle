@@ -70,6 +70,10 @@ dependencies {
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
 
     implementation "me.shedaniel.cloth:cloth-config-forge:${cloth_config_version}"
+
+    implementation('net.sf.jopt-simple:jopt-simple:5.0.4') { version { strictly '5.0.4' } }
+
+    annotationProcessor "org.spongepowered:mixin:0.8.5:processor"
 }
 
 tasks.named('processResources', ProcessResources).configure {
@@ -77,6 +81,7 @@ tasks.named('processResources', ProcessResources).configure {
         expand(
                 minecraft_version: minecraft_version,
                 minecraft_version_cap: minecraft_version_cap,
+                cloth_config_version: cloth_config_version,
                 forge_version: forge_version,
                 mod_version: mod_version,
                 mod_name: mod_name
@@ -92,7 +97,8 @@ tasks.named('jar', Jar).configure {
             'Specification-Version'   : '1', // We are version 1 of ourselves
             'Implementation-Title'    : project.name,
             'Implementation-Version'  : project.jar.archiveVersion,
-            'Implementation-Vendor'   : "DontNag"
+            'Implementation-Vendor'   : "DontNag",
+            'MixinConfigs'            : "${archives_name}.mixins.json",
         ])
     }
 }
@@ -125,9 +131,16 @@ sourceSets.each {
     def dir = layout.buildDirectory.dir("sourcesSets/$it.name")
     it.output.resourcesDir = dir
     it.java.destinationDirectory = dir
+
 }
 
 mixin {
     add sourceSets.main, 'nomoreoverlays.refmap.json'
     config 'nomoreoverlays.mixins.json'
+}
+
+sourceSets {
+    main {
+        ext.refMap = "${archives_name}.refmap.json"
+    }
 }

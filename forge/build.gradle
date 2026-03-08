@@ -123,7 +123,6 @@ tasks.withType(JavaCompile).configureEach {
 idea.module { downloadJavadoc = downloadSources = true }
 
 eclipse {
-
     synchronizationTasks 'genEclipseRuns'
 }
 
@@ -131,7 +130,6 @@ sourceSets.each {
     def dir = layout.buildDirectory.dir("sourcesSets/$it.name")
     it.output.resourcesDir = dir
     it.java.destinationDirectory = dir
-
 }
 
 mixin {
